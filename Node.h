@@ -6,17 +6,17 @@
 #define GLADKIH_3_1_NODE_H
 class Node{
     int value;
-    //потомки нода
+    //РїРѕС‚РѕРјРєРё РЅРѕРґР°
     std::vector<Node*> childs;
-    //цена связи
+    //С†РµРЅР° СЃРІСЏР·Рё
     std::vector<int> cost;
-    //номер реверсной связи, если она есть
+    //РЅРѕРјРµСЂ СЂРµРІРµСЂСЃРЅРѕР№ СЃРІСЏР·Рё, РµСЃР»Рё РѕРЅР° РµСЃС‚СЊ
     std::vector<int> reverse_index;
 public:
     int get_value() const{
         return value;
     }
-    //добавить связь с другим нодом
+    //РґРѕР±Р°РІРёС‚СЊ СЃРІСЏР·СЊ СЃ РґСЂСѓРіРёРј РЅРѕРґРѕРј
     void add_edge(Node* vertex, int cost, int reverse_cost = 0, bool fictive = false){
         childs.push_back(vertex);
         this->cost.push_back(cost);
@@ -31,7 +31,7 @@ public:
     int get_number_childs() const{
         return childs.size();
     }
-    //посмотреть потомка без права на изменение
+    //РїРѕСЃРјРѕС‚СЂРµС‚СЊ РїРѕС‚РѕРјРєР° Р±РµР· РїСЂР°РІР° РЅР° РёР·РјРµРЅРµРЅРёРµ
     const Node& check_child(int i) const{
         return *childs[i];
     }
